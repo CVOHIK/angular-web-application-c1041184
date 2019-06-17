@@ -1,0 +1,10 @@
+<mat-card *ngIf="isSelection" >
+<button mat-raised-button (click)="setCoordinates()">Show Route</button>
+
+<agm-map [latitude]="origin.lat" [longitude]="origin.lng" >
+  <agm-direction *ngIf="!changeMarker" [origin]="origin" [destination]="destination" [panel]="myPanel" [visible]="true">
+  </agm-direction>
+</agm-map>
+<div #myPanel ></div>
+</mat-card>
+

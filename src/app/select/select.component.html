@@ -1,0 +1,11 @@
+<mat-card>
+
+<mat-form-field>
+    <mat-label>Select a postal Code</mat-label>
+  <select autowidth matNativeControl required #selectPostalCode (change)="setSelectedPostalOffices(selectPostalCode.value)">
+    <option></option>
+    <option value="all">-- All --</option>
+    <option *ngFor="let p of postalcodes" [value]="p.attributes.postcode">{{p.attributes.postcode}}, {{p.attributes.district}}</option>
+  </select>
+</mat-form-field>
+</mat-card>

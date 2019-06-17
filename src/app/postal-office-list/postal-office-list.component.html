@@ -1,0 +1,48 @@
+<mat-card  *ngIf="mySelectedPostOffices.length">
+<table mat-table [dataSource]="mySelectedPostOffices" class="mat-elevation-z8">
+
+
+  <ng-container matColumnDef="naam">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.attributes.naam}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="straat">
+      <th mat-header-cell *matHeaderCellDef> Street </th>
+      <td mat-cell *matCellDef="let element"> {{element.attributes.straat}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="huisnummer">
+        <th mat-header-cell *matHeaderCellDef> Nr </th>
+        <td mat-cell *matCellDef="let element"> {{element.attributes.huisnummer}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="postcode">
+          <th mat-header-cell *matHeaderCellDef> PostalCode </th>
+          <td mat-cell *matCellDef="let element"> {{element.attributes.postcode}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="district">
+            <th mat-header-cell *matHeaderCellDef> Place </th>
+            <td mat-cell *matCellDef="let element"> {{element.attributes.district}} </td>
+          </ng-container>        
+
+  <ng-container matColumnDef="subtype">
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.attributes.subtype}} </td>
+    </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+  
+
+
+
+
+
+
+
+</mat-card>

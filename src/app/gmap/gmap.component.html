@@ -1,0 +1,21 @@
+
+<agm-map  
+  [latitude]="lat" 
+  [zoom]="zoom" 
+  [longitude]="lng"  
+  [fitBounds]="service.mySelectedPostalOffices.length>0">
+    <agm-marker *ngFor="let p of service.mySelectedPostalOffices" 
+      [latitude]="p.geometry.y"
+      [longitude]='p.geometry.x' 
+      [agmFitBounds]="service.mySelectedPostalOffices.length>0" 
+      (markerClick)="SetSelectedPostalOffice(p)">
+    </agm-marker>
+    <agm-marker  
+      [latitude]="lat"
+      [longitude]="lng" 
+      [agmFitBounds]="service.mySelectedPostalOffices.length>0" 
+      [iconUrl] ="'assets/ic_train_24px.svg'"
+      [zIndex]='50'>
+    </agm-marker>
+</agm-map>
+
